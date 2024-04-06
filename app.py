@@ -1,7 +1,7 @@
 import sqlite3
-
+from datetime import datetime, timedelta
 from flask import Flask, render_template, redirect, flash, session, request, g
-
+from flask_bcrypt import Bcrypt
 DATABASE = './assignment3.db'
 
 
@@ -33,8 +33,8 @@ def make_dict(cursor, row):
 
 
 app = Flask(__name__)
-
-
+bcrypt = Bcrypt(app)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes = 15)
 @app.teardown_appcontext
 def close_connection(exception):
     db = getattr(g, '_database', None)
@@ -50,49 +50,47 @@ def home():
     return render_template('welcome.html', username=session['username'], admin=session['admin'])
 
 
-@app.route('/loginpage')
+@app.route('/loginpage', methods=['GET', 'POST'])
 def loginpage():
-    if not request.args:
+    if request.method == 'POST':
+        username = request.form['username']
+        input_password = request.form['password']
+
+        db = get_db()
+        db.row_factory = make_dict
+        user = query_db('SELECT * FROM User WHERE username=?', [username], one=True)
+
+        if user and bcrypt.check_password_hash(user['password'], input_password):
+            session['username'] = user['username']
+            session['admin'] = True if user['admin'] == 1 else False
+            return redirect('/')
+        else:
+            return render_template('loginpage.html', error=True)
+    else:
         return render_template('loginpage.html')
 
-    username = request.args['username']
-    password = request.args['password']
-
-    db = get_db()
-    db.row_factory = make_dict
-    user = query_db('SELECT * FROM User WHERE username=? AND password=?',
-                    [username, password], one=True)
-    db.close()
-
-    if user:
-        session['username'] = user['username']
-        session['admin'] = True if user['admin'] == 1 else False
-        return redirect('/')
-    else:
-        return render_template('loginpage.html', error=True)
-
-
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if not request.args:
-        return render_template('signup.html')
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        is_admin = 1 if 'admin' in request.form and request.form['admin'] == 'on' else 0
 
-    username = request.args['username']
-    password = request.args['password']
+        db = get_db()
+        db.row_factory = make_dict
+        user = query_db('SELECT * FROM User WHERE username=?', [username], one=True)
 
-    is_admin = 1 if 'admin' in request.args else 0
-
-    db = get_db()
-    db.row_factory = make_dict
-    user = query_db('SELECT * FROM User WHERE username=?', [username], one=True)
-
-    if user:
-        return render_template('signup.html', error=True)
-        # return redirect('/signup')
+        if user:
+            # Provide feedback to the user that the username is already taken
+            return render_template('signup.html', error=True)
+        else:
+            # Store the hashed password instead of the plaintext one
+            insert_db('INSERT INTO User (username, password, admin) VALUES (?, ?, ?)',
+                      (username, hashed_password, is_admin))
+            return redirect('/loginpage')
     else:
-        insert_db('INSERT INTO User VALUES(?, ?, ?)', (username, password, is_admin))
-        return redirect('/loginpage')
-
+        return render_template('signup.html')
 
 @app.route('/logout')
 def logout():
@@ -186,7 +184,7 @@ def mark():
                 insert_db(
                     'INSERT INTO Mark (name, grade, username) VALUES (?, ?, ?)',
                     (name, grade, username))
-                flash("Mark for " + name + " is inserted with value:" + request.args['grade'])
+                flash("Mark for "+ username + name + " is inserted with value:" + request.args['grade'])
             else:
                 insert_db(
                     'UPDATE  Mark SET grade = ? where  name=? and username=?', [grade, name, username])
