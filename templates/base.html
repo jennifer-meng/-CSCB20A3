@@ -16,15 +16,18 @@
                 <li><a href="#Syllabus">Syllabus</a></li>
                 <li><a href="#Resources">Resources</a></li>
                 <li><a href="/feedback">Feedbacks</a></li>
+                 {% if session['admin'] %}
                 <li><a href="/mark">Grades</a></li>
                 <li><a href="/remark">Remark</a></li>
-
+                {% else %}
+                <li><a href="/mark">Grades/Remark</a></li>
+                {% endif %}
                 <li><a href="https://piazza.com/mail.utoronto.ca/winter2024/cscb20/home" target="blank_">Piazza</a></li>
                 <li><a href="/logout">Log out</a></li>
             </ul>
         </nav>
       <div>
-       <h1 class="title">CSCB20:Introduction to Databases and Web Applications</h1>
+       <h1 class="section" style="justify-content: center;text-align: center;">CSCB20:Introduction to Databases and Web Applications</h1>
       </div>
      {% block content %} {% endblock %}
 <section class="section">
@@ -384,7 +387,7 @@
   <div class="info">
     <p><span class="tag">Manage your </span>
       <a href="https://calendar.google.com/calendar/u/0/r">calendar</a><br><br><br>
-      <img src="calendar with OH.jpg" alt="Sample weekly Calendar for CSCB20 " width="700" height="333">
+      <img src="../static/image/calendar with OH.jpg" alt="Sample weekly Calendar for CSCB20 " width="700" height="333">
       <iframe
         src="https://calendar.google.com/calendar/embed?src=062btcpe6ukskfptv62jsc7sug%40group.calendar.google.com&amp;ctz=America/Toronto"
         style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>

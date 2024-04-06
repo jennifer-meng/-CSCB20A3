@@ -5,6 +5,17 @@
 {% block content %}
 <link rel="styleshet" href="../static/style/style.css" type="text/css">
 <script src="../static/index.js"></script>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="warning-alert">
+        <h4>Warning！</h4>
+    {% for message in messages %}
+      <p onclick="hideAlert(this.parentElement)" >{{ message }}</p>
+    {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
 <section class="section">
     <h2>Upload Marks</h2>
     <div class="info">

@@ -4,48 +4,53 @@
 {% endblock %}
 {% block content %}
 <link rel="styleshet" href="../static/style/style.css" type="text/css">
-
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="warning-alert">
+        <h4>Information！</h4>
+    {% for message in messages %}
+      <p onclick="hideAlert(this.parentElement)" >{{ message }}</p>
+    {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+<script src="../static/showmark.js"></script>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="myForm">
+      <label for="reason">Please enter mark request reason:</label><br>
+      <textarea id="reason" name="reason" rows="4" cols="50"></textarea><br>
+      <input type="submit" style="margin: 0 auto;" value="Submit">
+    </form>
+  </div>
+</div>
+<div id="toast"></div>
 <section class="section">
     <h2>Marks</h2>
     <div class="info">
 <div class="flex-table">
   <div class="flex-table-header">
     <div class="flex-table-cell">Mark Name</div>
-    <div class="flex-table-cell">Score</div> 
+    <div class="flex-table-cell">Score</div>
+    <div class="flex-table-cell">Remark Reason</div>
     <div class="flex-table-cell">Remark Request</div>
+
+
   </div>
     {% for mark in marks %}
         <div class="flex-table-row">
         <div class="flex-table-cell">{{ mark.name }}</div>
         <div class="flex-table-cell">{{ mark.grade }}</div>
+        <div class="flex-table-cell">{{ mark.reason }}</div>
         <div class="flex-table-cell">
-          <form action="/remark">
-            <input type="text" value="{{ mark.mark_id }}" style="display: none;" name="mark_id">
-            <input type="text" name="reason">
-            <input type="submit">
-          </form>
-<!--            <button class="open-button" onclick="openForm()">Open Form</button>-->
+            <button onclick="submitData('{{ mark.mark_id }}')">Remark Request</button>
+<!--          <form action="/remark">-->
+<!--            <input type="hidden" value="{{ mark.mark_id }}"  name="mark_id">-->
+<!--&lt;!&ndash;            <input type="text" name="reason" style="width: 200px;height: 30px"  maxlength="20">&ndash;&gt;-->
+<!--            <input type="submit">-->
+<!--          </form>-->
 
-<!--<div class="form-popup" id="myForm">-->
-<!--  <form action="/remark">-->
-<!--    <h1>Login</h1>-->
-<!--    <label><b>{{ mark.name }}</b></label>-->
-<!--    <label><b>Reason</b></label>-->
-<!--    <input type="password" placeholder="Enter Password" name="psw" required>-->
-
-<!--    <button type="submit" class="pagination button" onclick="closeForm()" name="reason">Submit</button>-->
-<!--  </form>-->
-<!--</div>-->
-
-<!--<script>-->
-<!--function openForm() {-->
-<!--  document.getElementById("myForm").style.display = "block";-->
-<!--}-->
-
-<!--function closeForm() {-->
-<!--  document.getElementById("myForm").style.display = "none";-->
-<!--}-->
-<!--</script>-->
         </div>
         </div>
     {% endfor %}

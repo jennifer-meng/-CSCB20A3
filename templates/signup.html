@@ -18,18 +18,22 @@
             <input type="password" name="password" />
           </div>
         <br/>
-
-        <label>sign up as Instructor</label>
+        <div class="form-group">
+        <label>Sign up as Instructor</label>
         <input type="checkbox" name="admin" />
-
+        </div>
         <br/>
 
         <input type="submit" value="Sign Up" />
 
         <br/>
         <div class="link">
-        <a href=" ">Log in</a >
+        <a href="/loginpage ">Log in</a >
         </div>
+        {% if error %}
+        <p style="color: red; ">Username is duplicated,please choose another username</p>
+        {% endif %}
+
     </form>
 </section>
 {% endblock %}

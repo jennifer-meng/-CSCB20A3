@@ -1,20 +1,30 @@
 .my-form{
   padding: 20px;
+    height: 300px;
+    width: 200px;
+
+    border-radius: 4px;
 }
 
 .my-form .form-group {
   padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .my-form label{
-  display: block;
+    margin-right: 10px; /* 可选：添加一些间距 */
 }
 
 .my-form input[type=text]{
   padding: 2px;
-  width: 14.5%;
+  width: 80%;
 }
-
+.my-form input[type=password]{
+  padding: 2px;
+  width: 80%;
+}
 .my-form .link a:visited{
   color: black;
 }
@@ -70,7 +80,7 @@ nav a::after{
 
 nav ul{
     display:flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
     width:100%;
     margin: 0 auto;
@@ -78,7 +88,7 @@ nav ul{
     font-weight: bold;
 }
 
-nav li{ 
+nav li{
   margin: 0 12px;
   white-space: nowrap;
   }
@@ -103,14 +113,14 @@ nav a, nav a:visited{
     margin: 10px;
   }
   .section {
-    background-color: white; 
+    background-color: white;
     margin-bottom: 0;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px; 
+    padding: 20px;
     transition: margin-bottom 0.2 ease-in;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     border: 2px solid #FFF;
     box-sizing: border-box;
   }
@@ -148,17 +158,17 @@ nav a, nav a:visited{
   /* padding: 10px; */
 }
 .section {
-  background-color: white; 
+  background-color: white;
   margin-bottom: 0;
-  margin: 15px 9px; 
-  padding: 20px; 
+  margin: 15px 9px;
+  padding: 20px;
   transition: margin-bottom 0.2 ease-in;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border: 2px solid #FFF;
   box-sizing: border-box;
-  width: 1100px;
+  /*width: 1100px;*/
 }
-  
+
 
 .section h2{
     margin: 0;
@@ -210,61 +220,61 @@ nav a, nav a:visited{
     flex-direction: column;
     width: 100%;
   }
-  
+
   .flex-table-header,
   .flex-table-row {
     display: flex;
     justify-content: space-between;
     background-color: #71bae1;
   }
-  
+
   .flex-table-cell {
-    padding: 10px; 
-    flex: 1; 
+    padding: 10px;
+    flex: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   .flex-table-header {
     font-weight: bold;
     color: white;
   }
-  
+
   .flex-table-row {
     background-color: transparent;
     border-bottom: 1px solid #ddd;
   }
-  
+
   .flex-table-row:nth-child(even) {
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
   }
-  
+
   .flex-table-row:hover {
-    background-color: #d6dfef; 
+    background-color: #d6dfef;
   }
-  
+
 .italic-text{
     font-style: italic
 }
 
 .flex-item-topic {
-    width: 250px; 
+    width: 250px;
     flex:none;
   }
-  
+
 .flex-item-weight {
     width: 80px; /* Takes up half as much space as flex-item-topic */
     flex: none
   }
-  
+
 .flex-item-due-date {
     width: 400px; /* Takes up twice as much space as flex-item-topic */
     flex: none;
   }
 
 .flex-item-solution {
-    width: 100px; 
+    width: 100px;
 }
 
 /*grid_table for syllabus*/
@@ -311,33 +321,33 @@ nav a, nav a:visited{
     /* border: 1px solid #ccc; */
     padding: 10px;
     text-align: center;
-    background-color: rgb(252, 254, 184); 
+    background-color: rgb(252, 254, 184);
     color: rgb(51, 40, 198);
   }
   .gridcellassignment1 {
     padding: 10px;
-    grid-column: 1 / span 3; 
+    grid-column: 1 / span 3;
     text-align: center;
     /* text-indent: 20px; */
-    background-color: rgb(252, 254, 184); 
+    background-color: rgb(252, 254, 184);
     color: rgb(51, 40, 198);
   }
   .colortest{
-    background-color: hwb(2 19% 32%); 
+    background-color: hwb(2 19% 32%);
     color:white;
   }
 
   .gridcell:hover {
-    background-color: #d6dfef; 
+    background-color: #d6dfef;
   }
   .gridcelleven {
     border: 1px solid #ccc;
     padding: 10px;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     text-align: center;
   }
   .gridcelleven:hover {
-    background-color: #d6dfef; 
+    background-color: #d6dfef;
   }
   /* feedback */
   .grid{
@@ -363,7 +373,7 @@ nav a, nav a:visited{
     border: none;
     cursor: pointer;
   }
-  
+
   input[type="submit"]:hover {
     background-color: #0056b3;
   }
@@ -378,7 +388,7 @@ nav a, nav a:visited{
   select:hover {
     border-color: #007bff; /* 悬停时边框颜色 */
   }
-  
+
   /* 聚焦样式 */
   select:focus {
     outline: none; /* 移除聚焦时的外边框 */
@@ -398,37 +408,16 @@ nav a, nav a:visited{
   .pagination button:hover {
     background-color: #0056b3;
   }
-  
+
   .qpage {
-    display: none; 
+    display: none;
   }
 
   /* 样式用于美化翻页按钮 */
   .pagination {
     margin-top: 10px;
   }
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
 
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
 
 .popup {
   position: relative;
@@ -487,7 +476,7 @@ nav a, nav a:visited{
 }
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-  from {opacity: 0;} 
+  from {opacity: 0;}
   to {opacity: 1;}
 }
 
@@ -519,13 +508,166 @@ footer a:hover{
 
 .flex-table-cell form input[type="text"],
 .flex-table-cell form input[type="submit"] {
-    display: block; 
-    width: 100%; 
-    margin-bottom: 10px; 
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .flex-table-cell form {
-    width: 100%; 
+    width: 100%;
 }
 
 
+.warning-alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #f0ad4e;
+    color: #fff;
+    border-color: #eea236;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.warning-alert h4 {
+    margin-top: 0;
+    color: inherit;
+}
+
+.warning-alert .close {
+    color: #fff;
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.warning-alert .close:hover,
+.warning-alert .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.warning-alert.fade-out {
+    opacity: 0;
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+  .modal {
+    display: none; /* 默认隐藏 */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  #toast.show {
+    opacity: 1;
+  }

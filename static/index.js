@@ -66,3 +66,16 @@
     gradeInput.setCustomValidity('');
   }
 }
+function hideAlert(alertElement) {
+    alertElement.classList.add('fade-out');
+    setTimeout(function() {
+        alertElement.style.display = 'none';
+    }, 50); // 等待CSS过渡完成
+}
+
+window.onload = function() {
+    var alertElement = document.querySelector('.warning-alert');
+    setTimeout(function() {
+        hideAlert(alertElement);
+    }, 2000); // 2秒钟后调用hideAlert函数
+}
