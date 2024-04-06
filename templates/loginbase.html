@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>{% block title %} {% endblock %}</title>
+<link rel="stylesheet" href="../static/style/style.css" type="text/css">
+</head>
+<body>
+
+    <header>
+        <h1 style="text-align: center">CSCB20 course website</h1>
+    </header>
+    <div>
+        <div class="content">{% block content %} {% endblock %}</div>
+    </div>
+
+    <footer>
+      <a href="https://web.cs.toronto.edu/people/faculty-directory">Faculty of Computer Science at UofT</a>
+      <p>Site Design by Christine Zhang and Jennifer Hou</p>
+    </footer>
+
+</body>
+</html>

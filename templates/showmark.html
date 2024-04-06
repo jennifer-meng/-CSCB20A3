@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+{% block title %} 
+    Grades
+{% endblock %}
+{% block content %}
+<link rel="styleshet" href="../static/style/style.css" type="text/css">
+
+<section class="section">
+    <h2>Marks</h2>
+    <div class="info">
+<div class="flex-table">
+  <div class="flex-table-header">
+    <div class="flex-table-cell">Mark Name</div>
+    <div class="flex-table-cell">Score</div> 
+    <div class="flex-table-cell">Remark Request</div>
+  </div>
+    {% for mark in marks %}
+        <div class="flex-table-row">
+        <div class="flex-table-cell">{{ mark.name }}</div>
+        <div class="flex-table-cell">{{ mark.grade }}</div>
+        <div class="flex-table-cell">
+          <form action="/remark">
+            <input type="text" value="{{ mark.mark_id }}" style="display: none;" name="mark_id">
+            <input type="text" name="reason">
+            <input type="submit">
+          </form>
+<!--            <button class="open-button" onclick="openForm()">Open Form</button>-->
+
+<!--<div class="form-popup" id="myForm">-->
+<!--  <form action="/remark">-->
+<!--    <h1>Login</h1>-->
+<!--    <label><b>{{ mark.name }}</b></label>-->
+<!--    <label><b>Reason</b></label>-->
+<!--    <input type="password" placeholder="Enter Password" name="psw" required>-->
+
+<!--    <button type="submit" class="pagination button" onclick="closeForm()" name="reason">Submit</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--function openForm() {-->
+<!--  document.getElementById("myForm").style.display = "block";-->
+<!--}-->
+
+<!--function closeForm() {-->
+<!--  document.getElementById("myForm").style.display = "none";-->
+<!--}-->
+<!--</script>-->
+        </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+
+</section>
+{% endblock %}

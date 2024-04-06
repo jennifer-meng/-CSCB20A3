@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+{% block title %} 
+    Feedback
+{% endblock %}
+{% block content %}
+<link rel="styleshet" href="../static/style/style.css" type="text/css">
+<script src="../static/index.js"></script>
+<section class="section">
+    <h2>Upload Marks</h2>
+    <div class="info">
+      <form>
+        <!-- <label for="feedback">Your Feedback:</label> -->
+        <span class="tag">Select the assessment:</span>
+        <select name="name">
+          <option value="Assignment1">Assignment1</option>
+          <option value="Assignment2">Assignment2</option>
+          <option value="Assignment3">Assignment3</option>
+          <option value="Midterm">Midterm</option>
+          <option value="Final">Final</option>
+        </select>
+        <span class="tag">Select the student:</span>
+        <select name="username">
+            {% for student in students %}
+            <option value="{{ student.username }}">{{ student.username }}</option>
+            {% endfor %}
+          </select>
+          <span class="tag">grade</span>
+          <input id="grade" type="text" name="grade" style="width: 100px;height: 30px" maxlength="6" oninput="validateGrade()">
+          <br>
+        <div class="button-container">
+          <input type="submit" value="Upload grades">
+        </div>
+      </form>
+    </div>
+</section>
+<div>
+
+</div>
+<section class="section">
+    <h2>Student Marks</h2>
+<div class="flex-table">
+  <div class="flex-table-header">
+    <div class="flex-table-cell">Student Name</div>
+    <div class="flex-table-cell">Mark Name</div>
+    <div class="flex-table-cell">Score</div>
+  </div>
+    {% for mark in marks %}
+        <div class="flex-table-row">
+        <div class="flex-table-cell">{{ mark.username }}</div>
+        <div class="flex-table-cell">{{ mark.name }}</div>
+        <div class="flex-table-cell">{{ mark.grade }}</div>
+        </div>
+    {% endfor %}
+</div>
+
+</section>
+{% endblock %}

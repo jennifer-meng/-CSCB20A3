@@ -1,0 +1,406 @@
+<html>
+<head>
+<title>{% block title %} {% endblock %}</title>
+<link rel="stylesheet" href="../static/style/style.css" type="text/css">
+</head>
+<body>
+    <div>
+        <nav>
+            <ul>
+
+                <li><a href="/">Home</a></li>
+                <li><a href="#CourseTeam">Course team</a></li>
+                <li><a href="#Assignment">Assignment</a></li>
+                <li><a href="#Calendar">Calendar</a></li>
+                <li><a href="#Labs">Labs</a></li>
+                <li><a href="#Syllabus">Syllabus</a></li>
+                <li><a href="#Resources">Resources</a></li>
+                <li><a href="/feedback">Feedbacks</a></li>
+                <li><a href="/mark">Grades</a></li>
+                <li><a href="/remark">Remark</a></li>
+
+                <li><a href="https://piazza.com/mail.utoronto.ca/winter2024/cscb20/home" target="blank_">Piazza</a></li>
+                <li><a href="/logout">Log out</a></li>
+            </ul>
+        </nav>
+      <div>
+       <h1 class="title">CSCB20:Introduction to Databases and Web Applications</h1>
+      </div>
+     {% block content %} {% endblock %}
+<section class="section">
+  <h2>Course Description</h2>
+  <div class="info">
+    <p>A practical introduction to databases and Web app development. Databases: terminology and applications; creating,
+      querying and updating databases; the entity-relationship model for database design. Web documents and
+      applications: static and interactive documents; Web servers and dynamic server-generated content; Web application
+      development and interface with database. </p>
+    <p><span class="tag">Prerequisite:</span> Some experience with programming in an imperative language such as Python,
+      Java or C.</p>
+    <p><span class="tag">Exclusion:</span>This course may not be taken after - or concurrently with - any C- or D-level
+      CSC course.</p>
+  </div>
+</section>
+
+
+<section class="section" id="CourseTeam">
+  <h2>Course Team</h2><br>
+  <div class="flex-table">
+
+    <div class="flex-table-header">
+      <div class="flex-table-cell">Role</div>
+      <div class="flex-table-cell">Name</div>
+      <div class="flex-table-cell">Office Hour</div>
+    </div>
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell">Professor</div>
+      <div class="flex-table-cell">Purva Gawde</div>
+      <div class="flex-table-cell">Tuesday 12:00-1:00</div>
+    </div>
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell">Teacher Assistant</div>
+      <div class="flex-table-cell">Joshua Concon</div>
+      <div class="flex-table-cell">Wednesday 15:00-16:00</div>
+    </div>
+
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell">Teacher Assistant</div>
+      <div class="flex-table-cell">Pourya Moghadam</div>
+      <div class="flex-table-cell">Monday 11:00–12:00 or 13:00–14:00 </div>
+    </div>
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell">Teacher Assistant</div>
+      <div class="flex-table-cell">Danny Chen</div>
+      <div class="flex-table-cell">Friday 12:00-13:00</div>
+    </div>
+
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell">Teacher Assistant</div>
+      <div class="flex-table-cell">JNisha Rajendran</div>
+      <div class="flex-table-cell">Wednesday 10:00-11:00</div>
+    </div>
+
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell">Teacher Assistant</div>
+      <div class="flex-table-cell">Navinn Ravindaran</div>
+      <div class="flex-table-cell">Friday 11:00-12:00</div>
+    </div>
+  </div>
+</section>
+
+<div class="section" id="Assignment">
+  <h2>Assignment</h2>
+  <div class="info">
+    <p>Here are the assignment and exercise topics, weights, and due dates. I will be posting the exercise and
+      assignment handouts here. All exercises and assignments will be submitted on <a
+        href="http://markus.utsc.utoronto.ca/cscb20w17/en">Markus</a>.</p>
+  </div>
+  <div class="flex-table">
+    <div class="flex-table-header">
+      <div class="flex-table-cell flex-item-weight"></div>
+      <div class="flex-table-cell flex-item-topic">Topic</div>
+      <div class="flex-table-cell flex-item-weight">Weight</div>
+      <div class="flex-table-cell flex-item-due-date">Due</div>
+      <div class="flex-table-cell flex-item-solution">Solution</div>
+    </div>
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell flex-item-weight">
+        <a href="" https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"">A1</a>
+      </div>
+      <div class="flex-table-cell flex-item-topic">Relational Algebra and MySQL</div>
+      <div class="flex-table-cell flex-item-weight">15%</div>
+      <div class="flex-table-cell flex-item-due-date">
+        <span class="tag">Part 1</span>
+        Wednesday Feb. 1, 11.59pm<br>
+        <span class="tag">Part 2&3</span> For 5% bonus Saturday Feb. 11, 11.59pm <br>OR Friday Feb. 17, 11.59 <br>
+        You can download a dumpfile for IMDB_SMALL <a
+          href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/IMDB_SMALL.sql">here</a>.<br>
+        To use it type <span class="italic-text">mysql -u utorid -p &lt; IMDB_SMALL.sql</span>.
+      </div>
+      <div class="flex-table-cell flex-item-solution">
+        <a href="" https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"soln.pdf">Part 1 Solution</a>
+      </div>
+    </div>
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell flex-item-weight">
+        <a href="http://mathlab.utsc.utoronto.ca/courses/cscb20w17/bretsche/assignments/a2/a2.html">A2</a>
+      </div>
+      <div class="flex-table-cell flex-item-topic">HTML, CSS, PHP</div>
+      <div class="flex-table-cell flex-item-weight">15%</div>
+      <div class="flex-table-cell flex-item-due-date">
+        <span class="tag">Part 1</span>
+        Worth 50% Friday March. 10, 11.59pm<br>
+        <span class="tag">Part 2</span> Worth 50% Friday March. 19, 11.59pm
+      </div>
+      <div class="flex-table-cell flex-item-solution">
+        Will be posted on <br> <a href="http://markus.utsc.utoronto.ca/cscb20w17/en">Markus</a>
+      </div>
+    </div>
+
+    <div class="flex-table-row">
+      <div class="flex-table-cell flex-item-weight">
+        <a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a3/a3_marking_scheme.txt">A3</a>
+      </div>
+      <div class="flex-table-cell flex-item-topic">Web Application and Database</div>
+      <div class="flex-table-cell flex-item-weight">15%</div>
+      <div class="flex-table-cell flex-item-due-date">Friday March 31, 11.59pm</div>
+      <div class="flex-table-cell flex-item-solution">TBA</div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<section class="section" id="Syllabus">
+  <h2>Syllabus</h2>
+  <div class="info">
+    <p><span class="tag1">Course Learning Outcomes:</span></p>
+    <p>Upon completion of this course, and of course with hard work and practice, you will:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Learn the basic concepts and appreciate the applications of database systems.<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Be familiar with the relational database theory and be able to write relational
+      algebra.<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Master the basics of SQL and construct queries using SQL.<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Comprehend the fundamentals of web application development by building database
+      backend app from scratch, using HTML,<br> JavaScript, micro web frameworks like
+      Python Flask, and other open-source tools.</p>
+  </div>
+  <div class="grid-table">
+    <!-- </div class='grid-table-header'> -->
+    <div class="grid-table-header">Week</div>
+    <div class="grid-table-header">Lec</div>
+    <div class="grid-table-header">Topic</div>
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcell">1</div>
+    <div class="gridcell">January 8</div>
+    <div class="gridcell">Introduction – Databases, Relational Model, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec1 notes</a></div>
+    <!-- </div> -->
+
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcelleven">2</div>
+    <div class="gridcelleven">January 15</div>
+    <div class="gridcelleven">Relational Model, Relational Algebra, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec2 notes</a></div>
+    <!-- </div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcell">3</div>
+    <div class="gridcell">January 22</div>
+    <div class="gridcell">Relational Algebra Queries and SQL Query Language, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec3 notes</a></div>
+    <!-- </div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcelleven">4</div>
+    <div class="gridcelleven">January 29</div>
+    <div class="gridcelleven">SQL Query Language, <a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">
+        Lec4 notes</a></div>
+    <!-- </div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcell">5</div>
+    <div class="gridcell">February 5</div>
+    <div class="gridcell">SQL and Introduction to web development, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec5 notes</a></div>
+    <div class="gridcellassignment"></div>
+    <div class="gridcellassignment">February 1</div>
+    <div class="gridcellassignment">Assignment 1 Due, 11:59 PM</div>
+    <!-- </div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcelleven">6</div>
+    <div class="gridcelleven">February 12</div>
+    <div class="gridcelleven">Introduction to HTML and CSS, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec6 notes</a></div>
+    <!-- </div> -->
+    <div class="gridcellassignment1 colortest">February 26 (9-11am) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Midterm Exam</div>
+    <!-- <div class="gridcellassignment colortest">Midterm Exam</div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcell">7</div>
+    <div class="gridcell">February 19</div>
+    <div class="gridcell">HTML, CSS, Box Model, <a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">
+        Lec7 notes</a></div>
+    <!-- </div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcelleven">8</div>
+    <div class="gridcelleven">February 26</div>
+    <div class="gridcelleven">Introduction to Flask, Flexbox and Media Queries, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec8 notes</a></div>
+    <!-- </div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcell">9</div>
+    <div class="gridcell">March 4</div>
+    <div class="gridcell">Flask and Introduction to JavaScript, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec9 notes</a></div>
+    <!-- </div> -->
+    <div class="gridcellassignment"></div>
+    <div class="gridcellassignment">March 9</div>
+    <div class="gridcellassignment">Assignment 2 Part1 Due, 11:59 PM</div>
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcelleven">10</div>
+    <div class="gridcelleven">March 11</div>
+    <div class="gridcelleven">Integrating Flask and SQL, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec10 notes</a></div>
+
+    <!-- </div> -->
+    <!-- <div class=grid-table-row> -->
+    <div class="gridcell">11</div>
+    <div class="gridcell">March 18</div>
+    <div class="gridcell">Flask and SQL, examples, <a
+        href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec11 notes</a></div>
+    <!-- </div> -->
+    <div class="gridcellassignment"></div>
+    <div class="gridcellassignment">March 19</div>
+    <div class="gridcellassignment">Assignment 2 Part2 Due, 11:59 PM</div>
+    <div class="gridcelleven">12</div>
+    <div class="gridcelleven">March 25</div>
+    <div class="gridcelleven">Wrap-up, <a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/"> Lec12
+        notes</a></div>
+
+    <div class="gridcellassignment"></div>
+    <div class="gridcellassignment">March 31</div>
+    <div class="gridcellassignment">Assignment 3 Due, 11:59 PM</div>
+    <div class="gridcellassignment1 colortest">April 23 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Final Exam</div>
+    <!-- <div class="gridcellassignment colortest"></div> -->
+  </div>
+  <p><span class="tag1">Examinations:</span></p>
+  <p><span class="tag">Midterm Exam</span>
+    <br>Mid term exam for B20 is on February 26th during class time (9 to 11) in SW 319 (where we meet for lectures).The
+    exam is based on database portion we covered in class. That includes, Relational Algebra, and SQL queries. 
+
+    The exam will not include any web application content we covered last week. 
+
+    You can prepare for this exam by reviewing all the queries we have learned so far in lectures, tutorials and
+    assignment.
+  </p>
+  <p><span class="tag">Final Exam</span>
+    <br>There will be one in-person final exam for the course. You need to score at least 35% in finals to pass the
+    course.
+  </p>
+</section>
+
+<section class="section" id="Labs">
+  <h2>Labs</h2>
+  <p>This section contains the tutorial exercises.Tutorials are held every week. The first tutorial week is week 2.
+    <br>Please make use of this valuable resource!</p>
+  <div class="flex-table">
+    <div class="grid-table3">
+      <div class="grid-table-header">Week</div>
+      <div class="grid-table-header">Labs</div>
+      <div class="grid-table-header">solution</div>
+      <!-- <div class=grid-row> -->
+      <div class="gridcell">2</div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">speed-refresher of
+          Python</a></div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln1</a></div>
+      <!-- </div> -->
+      <div class="gridcelleven">3</div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">Relational
+          algebra</a></div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln2</a></div>
+
+      <div class="gridcell">4</div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">Tutorial4</a></div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln3</a></div>
+
+      <div class="gridcelleven">5</div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">Tutorial5</a>
+      </div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln4</a></div>
+
+      <div class="gridcell">6</div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">SQL queries</a></div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln5</a></div>
+
+      <div class="gridcelleven">7</div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">Python Flask</a>
+      </div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln6</a></div>
+
+      <div class="gridcell">8</div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">Introduction to
+          CSS</a></div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln7</a></div>
+
+      <div class="gridcelleven">9</div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">CSS Flexbox</a>
+      </div>
+      <div class="gridcelleven"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">soln8</a></div>
+
+      <div class="gridcell">10</div>
+      <div class="gridcell"><a href="https://www.utsc.utoronto.ca/~bretscher/b20/assignments/a1/">JavaScript</a></div>
+      <div class="gridcell">TBA</div>
+
+      <div class="gridcelleven">11</div>
+      <div class="gridcelleven">TBA</div>
+      <div class="gridcelleven">TBA</div>
+
+      <div class="gridcell">12</div>
+      <div class="gridcell">TBA</a></div>
+      <div class="gridcell">TBA</div>
+    </div>
+</section>
+<section class="section" id="Resources">
+  <h2>Resources</h2>
+  <div class="info">
+    <p><span class="tag1">Online Resources</span></p>
+    <p><span class="tag">Course website</span><br>
+      Course information, lecture notes, tutorial material, important announcements, etc. will be posted on the course
+      website. It is your responsibility to visit it frequently.</p>
+    <span class="tag">Beginner Tutorial</span><br>for Sqlite: <a
+      href="https://www.sqlite.org/index.html">https://www.sqlite.org/index.html</a>
+    <br>Browser Option for Sqlite: <a href="https://sqlitebrowser.org/">https://sqlitebrowser.org/</a>
+    <br>Validator: <a href="https://validator.w3.org/">https://validator.w3.org/</a>
+    <br>Text Editors: Visual Studio, Sublime, Atom, Notepad++
+    <br>for Python Flask: <a
+      href="https://flask.palletsprojects.com/en/2.3.x/">https://flask.palletsprojects.com/en/2.3.x/</a>
+    <br>for JavaScript Documentation: <a
+      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide</a>
+    <p><span class="tag">Email communication</span>
+      <br>Questions regarding the course material, assignments, midterm, etc. should be posed on the bulletin board.
+      Questions about the assignment which you feel you cannot formulate without revealing your solution (should be very
+      rare!), as well as questions and concerns regarding your personal matters should be directed to the instructor.
+    </p>
+    <p><span class="tag">Discussion board</span>
+      <br>You are encouraged to use the bulletin board (<a
+        href="https://piazza.com/mail.utoronto.ca/winter2024/cscb20/home">Piazza</a>) to discuss the course material,
+      pose questions on the assignments, etc. The bulletin board will be monitored by the instructor and by your TAs.
+      Please, be very careful not to reveal (parts of) your solution on the bulletin board.
+    </p>
+    <p><span class="tag1">Textbooks or readings</span></p>
+    For a course like this, no single textbook will represent the course expectations well.<br>
+    However, we will provide you weekly reading material (some of which will be mandatory) from
+    other universities and other places on the web. This material will supplement well with what is
+    taught in the class.
+  </div>
+</section>
+
+<section class="section" id="Calendar">
+  <h2>Calendar</h2>
+  <div class="info">
+    <p><span class="tag">Manage your </span>
+      <a href="https://calendar.google.com/calendar/u/0/r">calendar</a><br><br><br>
+      <img src="calendar with OH.jpg" alt="Sample weekly Calendar for CSCB20 " width="700" height="333">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=062btcpe6ukskfptv62jsc7sug%40group.calendar.google.com&amp;ctz=America/Toronto"
+        style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+    </p>
+  </div>
+</section>
+
+
+
+    </div>
+
+    <footer>
+      <a href="https://web.cs.toronto.edu/people/faculty-directory">Faculty of Computer Science at UofT</a>
+      <p>Site Design by Christine Zhang and Jennifer Hou</p>
+    </footer>
+
+</body>
+</html>

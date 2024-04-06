@@ -1,0 +1,81 @@
+{% extends "base.html" %} 
+{% block title %} 
+    Feedback
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="../static/style/style.css" type="text/css">
+<div>
+    <h1 class="title">Your Student Feedbacks</h1>
+</div>
+<section class="section" >
+<div id="content">
+  <!-- 页面内容 -->
+  <div id="qpage1" class="qpage">
+    <h2>Question1 What do you like about the instructor teaching?</h2>
+    {% for feedback in feedbacks %}
+        <p>Student answer:{{ feedback.Q1 }}</p>
+        <hr />
+    {% endfor %}
+  </div>
+  <div id="qpage2" class="qpage">
+    <h2>Question2 What do you recommend the instructor to do to improve their teaching?</h2>
+    {% for feedback in feedbacks %}
+        <p>Student answer:{{ feedback.Q2 }}</p>
+        <hr />
+    {% endfor %}
+  </div>
+  <div id="qpage3" class="qpage">
+    <h2>Question3 What do you like about the labs?</h2>
+    {% for feedback in feedbacks %}
+        <p>Student answer:{{ feedback.Q3 }}</p>
+        <hr />
+    {% endfor %}
+  </div>
+  <div id="qpage4" class="qpage">
+    <h2>Question4 What do you recommend the lab instructors to do to improve their lab teaching?</h2>
+    {% for feedback in feedbacks %}
+        <p>Student answer:{{ feedback.Q4 }}</p>
+        <hr />
+    {% endfor %}
+  </div>
+</div>
+
+<div class="pagination">
+  <!-- 翻页按钮 -->
+  <button onclick="prevqpage()">Previous Qustion</button>
+  <button class="next-button" onclick="nextqpage()">Next Qustion</button>
+</div>
+</section>
+<script src="../static/index.js"></script>
+<!-- <script>
+  let currentqpage = 1;
+  const qpages = document.querySelectorAll('.qpage');
+
+  // 显示当前页
+  function showqpage(qpageNumber) {
+    qpages.forEach(qpage => {
+      qpage.style.display = 'none'; // 隐藏所有页面
+    });
+    document.getElementById(`qpage${qpageNumber}`).style.display = 'block'; // 显示当前页
+  }
+
+  // 上一页
+  function prevqpage() {
+    if (currentqpage > 1) {
+      currentqpage--;
+      showqpage(currentqpage);
+    }
+  }
+
+  // 下一页
+  function nextqpage() {
+    if (currentqpage < qpages.length) {
+      currentqpage++;
+      showqpage(currentqpage);
+    }
+  }
+
+  // 初始显示第一页
+  showqpage(currentqpage);
+</script> -->
+{% endblock %}
