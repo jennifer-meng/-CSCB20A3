@@ -139,7 +139,7 @@ def feedback():
             insert_db(
                 'INSERT INTO Feedback ("Instructor", "Q1", "Q2", "Q3", "Q4") VALUES(?, ?, ?, ?, ?)',
                 (instructor, question1, question2, question3, question4))
-            flash('Submitted')
+            # flash('Submitted')
             return redirect('/')
 
 
