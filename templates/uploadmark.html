@@ -8,7 +8,7 @@
 {% with messages = get_flashed_messages() %}
   {% if messages %}
     <div class="warning-alert">
-        <h4>Warning！</h4>
+        <h4>Action Detected！</h4>
     {% for message in messages %}
       <p onclick="hideAlert(this.parentElement)" >{{ message }}</p>
     {% endfor %}
@@ -37,7 +37,7 @@
           </select>
           <span class="tag">grade</span>
           <input id="grade" type="text" name="grade" style="width: 100px;height: 30px" maxlength="6" value="" oninput="validateGrade()" required>
-          <br>
+          <br><br><br>
         <div class="button-container">
           <input type="submit" value="Upload grades">
         </div>

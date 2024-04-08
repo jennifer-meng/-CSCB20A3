@@ -7,7 +7,7 @@
 {% with messages = get_flashed_messages() %}
   {% if messages %}
     <div class="warning-alert">
-        <h4>Information！</h4>
+        <h4>Request submitted！</h4>
     {% for message in messages %}
       <p onclick="hideAlert(this.parentElement)" >{{ message }}</p>
     {% endfor %}
@@ -20,7 +20,7 @@
     <span class="close">&times;</span>
     <form id="myForm">
       <label for="reason">Please enter mark request reason:</label><br>
-      <textarea id="reason" name="reason" rows="4" cols="50" placeholder="keep it oneline"></textarea><br>
+      <textarea id="reason" name="reason" rows="4" cols="50" placeholder="Enter your reason here..."></textarea><br>
       <input type="submit" style="margin: 0 auto;" value="Submit">
     </form>
   </div>

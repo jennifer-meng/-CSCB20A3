@@ -235,7 +235,6 @@ nav a, nav a:visited{
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
   .flex-table-header {
     font-weight: bold;
     color: white;
@@ -296,9 +295,8 @@ nav a, nav a:visited{
 }
 .grid-table4{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
   grid-template-rows: auto;
-  grid-gap: 10px;
 }
 .grid-table-header{
   margin-top: 10px;
@@ -315,8 +313,14 @@ nav a, nav a:visited{
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-
   }
+.flex-table-remark {
+    padding: 10px;
+    border: 1px solid #ccc;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: ellipsis;
+}
   .gridcellassignment {
     /* border: 1px solid #ccc; */
     padding: 10px;
@@ -419,7 +423,7 @@ nav a, nav a:visited{
   }
 
 
-.popup {
+/*.popup {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -430,7 +434,7 @@ nav a, nav a:visited{
 }
 
 /* The actual popup */
-.popup .popuptext {
+/*.popup .popuptext {
   visibility: hidden;
   width: 160px;
   background-color: #555;
@@ -446,7 +450,7 @@ nav a, nav a:visited{
 }
 
 /* Popup arrow */
-.popup .popuptext::after {
+/* .popup .popuptext::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -458,7 +462,7 @@ nav a, nav a:visited{
 }
 
 /* Toggle this class - hide and show the popup */
-.popup.show .popuptext {
+/* .popup.show .popuptext {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
@@ -475,7 +479,7 @@ nav a, nav a:visited{
   background-color: #0056b3;
 }
 /* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
+/* @-webkit-keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
 }
@@ -483,7 +487,7 @@ nav a, nav a:visited{
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
-}
+}*/
 
 /*footer*/
 footer {
@@ -517,13 +521,12 @@ footer a:hover{
     width: 100%;
 }
 
-
 .warning-alert {
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
-    background-color: #f0ad4e;
+    background-color: #0056b3;
     color: #fff;
     border-color: #eea236;
     position: relative;
@@ -534,6 +537,7 @@ footer a:hover{
 .warning-alert h4 {
     margin-top: 0;
     color: inherit;
+    text-align: center;
 }
 
 .warning-alert .close {

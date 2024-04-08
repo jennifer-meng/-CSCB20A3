@@ -111,7 +111,7 @@ def feedback():
 
         print(feedbacks)
 
-        return render_template('feedback_instructor.html', feedbacks=feedbacks)
+        return render_template('feedback_instructor.html', feedbacks=feedbacks,enumerate=enumerate)
 
     else:
         if 'username' not in session:
@@ -184,11 +184,11 @@ def mark():
                 insert_db(
                     'INSERT INTO Mark (name, grade, username) VALUES (?, ?, ?)',
                     (name, grade, username))
-                flash("Mark for "+ username + name + " is inserted with value:" + request.args['grade'])
+                flash("Mark for " + username + "‘s " + name + " is inserted with value: " + request.args['grade'])
             else:
                 insert_db(
                     'UPDATE  Mark SET grade = ? where  name=? and username=?', [grade, name, username])
-                flash("Mark for " + name + " is  updated with value:" + request.args['grade'])
+                flash("Mark for " + username + "‘s " + name + " is  updated with value: " + request.args['grade'])
             return redirect('/mark')
     else:
         db = get_db()

@@ -12,29 +12,29 @@
   <!-- 页面内容 -->
   <div id="qpage1" class="qpage">
     <h2>Question1 What do you like about the instructor teaching?</h2>
-    {% for feedback in feedbacks %}
-        <p>Student answer:{{ feedback.Q1 }}</p>
+    {% for index, feedback in enumerate(feedbacks, start=1) %}
+        <p>Student{{ index }} answer:{{ feedback.Q1 }}</p>
         <hr />
     {% endfor %}
   </div>
   <div id="qpage2" class="qpage">
     <h2>Question2 What do you recommend the instructor to do to improve their teaching?</h2>
-    {% for feedback in feedbacks %}
-        <p>Student answer:{{ feedback.Q2 }}</p>
+    {% for index, feedback in enumerate(feedbacks, start=1) %}
+        <p>Student{{ index }} answer:{{ feedback.Q2 }}</p>
         <hr />
     {% endfor %}
   </div>
   <div id="qpage3" class="qpage">
     <h2>Question3 What do you like about the labs?</h2>
-    {% for feedback in feedbacks %}
-        <p>Student answer:{{ feedback.Q3 }}</p>
+    {% for index, feedback in enumerate(feedbacks, start=1) %}
+        <p>Student{{ index }} answer:{{ feedback.Q3 }}</p>
         <hr />
     {% endfor %}
   </div>
   <div id="qpage4" class="qpage">
     <h2>Question4 What do you recommend the lab instructors to do to improve their lab teaching?</h2>
-    {% for feedback in feedbacks %}
-        <p>Student answer:{{ feedback.Q4 }}</p>
+   {% for index, feedback in enumerate(feedbacks, start=1) %}
+        <p>Student{{ index }} answer:{{ feedback.Q4 }}</p>
         <hr />
     {% endfor %}
   </div>

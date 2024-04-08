@@ -20,24 +20,23 @@
 
     // 设置定时器，以便在用户关闭对话框后跳转到其他页面
     setTimeout(function(){
-      var form = document.getElementById('Feedbackform'); // 设置表单的提交方法为POST 
-      // form.method = 'POST'; // 设置表单的提交动作（后端处理程序的URL） 
+      var form = document.getElementById('Feedbackform'); // 设置表单的提交方法为POST
       form.action = '/feedback'; // 提交表单 
       form.submit(); }, 500); // 延迟500毫秒跳转
     }
 
+//for instructor to read feedback
     let currentqpage = 1;
     const qpages = document.querySelectorAll('.qpage');
   
-    // 显示当前页
+    // current page
     function showqpage(qpageNumber) {
       qpages.forEach(qpage => {
-        qpage.style.display = 'none'; // 隐藏所有页面
+        qpage.style.display = 'none'; // hide all page
       });
-      document.getElementById(`qpage${qpageNumber}`).style.display = 'block'; // 显示当前页
-    }
+      document.getElementById(`qpage${qpageNumber}`).style.display = 'block'; // current page
   
-    // 上一页
+    // last page
     function prevqpage() {
       if (currentqpage > 1) {
         currentqpage--;
@@ -70,12 +69,12 @@ function hideAlert(alertElement) {
     alertElement.classList.add('fade-out');
     setTimeout(function() {
         alertElement.style.display = 'none';
-    }, 50); // 等待CSS过渡完成
+    }, 50); // wait CSS
 }
 
 window.onload = function() {
     var alertElement = document.querySelector('.warning-alert');
     setTimeout(function() {
         hideAlert(alertElement);
-    }, 2000); // 2秒钟后调用hideAlert函数
+    }, 2000); // hideAlert function after 2 second
 }
